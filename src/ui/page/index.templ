@@ -1,0 +1,21 @@
+package page
+
+import "fmt"
+import "strings"
+
+templ Index(s []string) {
+	<div class="flex flex-col space-y-4">
+        for _, section := range []string{"Teamworkonline", "Fangraphs"} {
+            <section>
+                <h3 class="border-b border-gray-300 dark:border-gray-700">{section}</h3>
+
+                <div hx-get={fmt.Sprintf("/api/widget/%s", strings.ToLower(section))} hx-trigger="load" hx-swap="innerHTML" hx-indicator="#loading">
+                    <div id="loading" class="htmx-indicator flex flex-col items-center space-y-4 p-4">
+                        <span class="loader"></span>
+                        <span class="text-xl font-semibold">Fetching...</span>
+                    </div>
+                </div>
+            </section>
+        }
+	</div>
+}

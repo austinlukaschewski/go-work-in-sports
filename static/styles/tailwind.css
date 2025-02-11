@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=block");
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+    /* FONT */
+    --font-display: 'Open Sans', sans-serif;
+
+    /* COLOR */
+    --color-*: initial;
+
+    --color-primary-50: hsl(210, 100%, 96%);
+    --color-primary-100: hsl(210, 100%, 90%);
+    --color-primary-200: hsl(210, 100%, 80%);
+    --color-primary-300: hsl(210, 100%, 70%);
+    --color-primary-400: hsl(210, 100%, 60%);
+    --color-primary-500: hsl(210, 100%, 45%);
+    --color-primary-600: hsl(210, 100%, 42%);
+    --color-primary-700: hsl(210, 100%, 38%);
+    --color-primary-800: hsl(210, 100%, 30%);
+    --color-primary-900: hsl(210, 100%, 23%);
+
+    --color-accent-50: hsl(210, 14%, 92%);
+    --color-accent-100: hsl(210, 14%, 87%);
+    --color-accent-200: hsl(210, 14%, 72%);
+    --color-accent-300: hsl(210, 14%, 56%);
+    --color-accent-400: hsl(210, 14%, 36%);
+    --color-accent-500: hsl(210, 14%, 28%);
+    --color-accent-600: hsl(210, 14%, 22%);
+    --color-accent-700: hsl(210, 14%, 13%);
+    --color-accent-800: hsl(210, 14%, 9%);
+    --color-accent-900: hsl(210, 14%, 7%);
+
+    --color-gray-50: hsl(215, 15%, 97%);
+    --color-gray-100: hsl(215, 15%, 92%);
+    --color-gray-200: hsl(215, 15%, 89%);
+    --color-gray-300: hsl(215, 15%, 82%);
+    --color-gray-400: hsl(215, 15%, 75%);
+    --color-gray-500: hsl(215, 15%, 65%);
+    --color-gray-600: hsl(215, 15%, 50%);
+    --color-gray-700: hsl(215, 15%, 40%);
+    --color-gray-800: hsl(215, 15%, 22%);
+    --color-gray-900: hsl(215, 15%, 12%);
+    --color-efx-gray: hsl(209, 17%, 24%);
+
+    --color-error-50: hsl(355, 98%, 97%);
+    --color-error-100: hsl(355, 98%, 93%);
+    --color-error-200: hsl(355, 98%, 87%);
+    --color-error-300: hsl(355, 98%, 80%);
+    --color-error-400: hsl(355, 98%, 74%);
+    --color-error-500: hsl(355, 98%, 66%);
+    --color-error-600: hsl(355, 98%, 46%);
+    --color-error-700: hsl(355, 98%, 39%);
+    --color-error-800: hsl(355, 98%, 29%);
+    --color-error-900: hsl(355, 98%, 17%);
+
+    --color-success-50: hsl(144, 72%, 95%);
+    --color-success-100: hsl(144, 72%, 87%);
+    --color-success-200: hsl(144, 72%, 77%);
+    --color-success-300: hsl(144, 72%, 66%);
+    --color-success-400: hsl(144, 72%, 56%);
+    --color-success-500: hsl(144, 72%, 46%);
+    --color-success-600: hsl(144, 72%, 41%);
+    --color-success-700: hsl(144, 72%, 37%);
+    --color-success-800: hsl(144, 72%, 32%);
+    --color-success-900: hsl(144, 72%, 21%);
+
+    --color-warning-50: hsl(48, 100%, 96%);
+    --color-warning-100: hsl(48, 100%, 88%);
+    --color-warning-200: hsl(48, 100%, 82%);
+    --color-warning-300: hsl(48, 100%, 64%);
+    --color-warning-400: hsl(48, 100%, 48%);
+    --color-warning-500: hsl(48, 100%, 44%);
+    --color-warning-600: hsl(40, 100%, 40%);
+    --color-warning-700: hsl(36, 100%, 34%);
+    --color-warning-800: hsl(36, 100%, 27%);
+    --color-warning-900: hsl(36, 100%, 18%);
+
+    --color-white: #fff;
+    --color-black: #000;
+}
+
+@layer base {
+
+    /* HEADING */
+    h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2.75rem;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 2.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    h5 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    h6 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    a {
+        color: hsl(195, 84%, 35%);
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            color:hsl(195, 100%, 20%);
+            text-decoration: underline;
+        }
+    }
+
+    @variant dark {
+        a {
+            color: hsl(195, 100%, 50%);
+            text-decoration: none;
+            cursor: pointer;
+    
+            &:hover {
+                color: hsl(195, 100%, 40%);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/*
+    This needs to be in this file so the color-primary-x can be defined when Tailwind is compiling.
+*/
+.gradient-text-primary {
+    background: linear-gradient(90deg, var(--color-primary-400) 5%, var(--color-primary-500) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-accent {
+    background: linear-gradient(90deg, var(--color-accent-400) 5%, var(--color-accent-500) 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

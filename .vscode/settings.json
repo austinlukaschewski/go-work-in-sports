@@ -1,0 +1,36 @@
+{
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "editor.defaultFormatter": "golang.go",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.fontSize": 14,
+  "go.formatTool": "gofumpt",
+  "go.formatFlags": [
+    "-l",
+    "-w",
+    "-extra"
+  ],
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ],
+  "gopls": {
+    "ui.completion.usePlaceholders": true,
+    "formatting.gofumpt": true,
+    "formatting.local": "github.com/austinlukachewski/data-fetcher",
+    "analyses": {
+      "fieldalignment": true
+    },
+    "staticcheck": true
+  }
+}
+// Nice to knows for future use
+// "go.inlayHints.assignVariableTypes": true,
+// "go.inlayHints.rangeVariableTypes": true,

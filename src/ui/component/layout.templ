@@ -1,0 +1,54 @@
+package component
+
+templ Layout(content templ.Component) {
+	<html translate="no" data-theme="dark">
+		@head()
+		<body class="flex flex-col h-full">
+			@header()
+			<main class="flex-1 container mx-auto px-4 sm:px-4">
+				@content
+			</main>
+			@footer()
+		</body>
+	</html>
+}
+
+templ header() {
+	<header class="bg-paper mb-4 px-8 border-b border-b-gray-200 dark:border-b-gray-800 shadown-md">
+		<div class="flex items-center h-14 justify-between">
+			<span class="gradient-text-primary text-2xl font-bold">Work In Sports</span>
+			<button type="button" class="cursor-pointer" onclick="toggleDataThemeMode()">
+				<i id="data-theme-mode-btn" class="material-symbols-outlined">light_mode</i>
+			</button>
+		</div>
+	</header>
+}
+
+templ footer() {
+	<footer class="bg-paper mt-8 px-4 py-8 border-t border-t-gray-200 dark:border-t-gray-800">
+		<div class="flex items-center">
+			<span class="flex-1 text-sm text-gray-500">
+				Copyright &copy; Austin Lukaschewski, 2025. All Rights Reserved.
+			</span>
+			<div class="flex flex-col items-center space-y-1">
+				<i class="material-symbols-outlined text-gray-500">code</i>
+				<span class="text-sm text-gray-500">v0.1.0</span>
+			</div>
+		</div>
+	</footer>
+}
+
+templ head() {
+	<head>
+		<title>WIS - Work in Sports</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<!-- Generated Tailwind CSS -->
+		<link rel="stylesheet" href="static/css/tailwind.css"/>
+		<!-- Custom css -->
+		<link rel="stylesheet" href="static/css/global.css"/>
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+		<!-- HTMX -->
+		<script src="https://unpkg.com/htmx.org@2.0.3"></script>
+		<script src="static/js/theme-mode.js"></script>
+	</head>
+}

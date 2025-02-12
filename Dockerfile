@@ -1,29 +1,24 @@
-FROM golang:1.23-alpine AS build
-
-RUN apk update && apk add --no-cache ca-certificates && update-ca-certificates
+FROM arm64v8/golang:1.23 AS build
 
 WORKDIR /app
 
 COPY . .
 
-# RUN source ./tools/postinstall.sh
-# RUN mage buildtailwindcss
-# RUN mage buildtempl
-# RUN mage buildscss
-
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./main .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o main .
 
 FROM alpine:latest
 
 WORKDIR /app
 
-COPY --from=build /app/main /app
-COPY --from=build /app/static /app/static
-COPY --from=build /app/internal /app/internal
+RUN apk --no-cache add ca-certificates && update-ca-certificates
 
-EXPOSE 4000
-USER 1000
+COPY /src /app/src
+COPY /internal /app/internal
+COPY /static /app/static
+COPY --from=build /app/main .
 
 ENV PORT=4000
+EXPOSE 4000
+USER 1000
 
 CMD ["./main"]

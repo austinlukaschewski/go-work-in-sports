@@ -22,8 +22,8 @@ templ JobTile(j model.Job) {
 			<a target="_blank" href={ templ.URL(j.Link) } class="text-xl font-semibold md:overflow-hidden md:text-ellipsis md:whitespace-nowrap">{ j.Title }</a>
 			<span class="text-lg">{ j.Org }</span>
 		</div>
-		<div class="flex items-center justify-between">
-			<span class="text-sm text-gray-500">{ j.SincePostedDate }</span>
+		<div class="flex items-center justify-between text-sm text-gray-500">
+			<span>{ j.SincePostedDate }</span>
 			if j.Date != "" {
 				<span>{ j.Date }</span>
 			} else {

@@ -64,8 +64,9 @@ func main() {
 	killSig := make(chan os.Signal, 1)
 	signal.Notify(killSig, os.Interrupt, syscall.SIGTERM)
 
+	port := os.Getenv("PORT")
 	go func() {
-		err := http.ListenAndServe(fmt.Sprintf(":%d", 4000), middlewareLogger(mux))
+		err := http.ListenAndServe(fmt.Sprintf(":%s", port), middlewareLogger(mux))
 
 		if errors.Is(err, http.ErrServerClosed) {
 			xlog.Warn("Server shutting down")

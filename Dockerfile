@@ -12,9 +12,9 @@ WORKDIR /app
 
 RUN apk --no-cache add ca-certificates && update-ca-certificates
 
-COPY /src /app/src
-COPY /internal /app/internal
-COPY /static /app/static
+COPY ./src /app/src
+COPY ./internal /app/internal
+COPY ./static /app/static
 COPY --from=build /app/main .
 
 ENV PORT=4000

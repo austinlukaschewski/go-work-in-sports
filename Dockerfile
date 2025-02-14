@@ -7,7 +7,7 @@ COPY . .
 RUN go mod download && go mod verify
 RUN ["templ", "generate"]
 RUN chmod +x ./tailwindcss
-RUN ./tailwindcss -i ./static/styles/tailwind.css -o ./static/public/css/tailwind.css
+RUN ["./tailwindcss", "-i", "./static/styles/tailwind.css", "-o", "./static/public/css/tailwind.css"]
 
 
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o main .

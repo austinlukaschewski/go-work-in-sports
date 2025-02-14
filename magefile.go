@@ -37,11 +37,11 @@ func Tidy() error {
 }
 
 func WatchSCSS() error {
-	return sh.RunV("./tools/sass", "--no-source-map", "--watch", "./static/styles/global.scss:./static/public/css/global.css")
+	return sh.RunV("./sass", "--no-source-map", "--watch", "./static/styles/global.scss:./static/public/css/global.css")
 }
 
 func BuildSCSS() error {
-	return sh.RunV("./tools/sass", "--no-source-map", "./static/scss:./static/css")
+	return sh.RunV("./sass", "--no-source-map", "./static/scss:./static/css")
 }
 
 func BuildTempl() error {

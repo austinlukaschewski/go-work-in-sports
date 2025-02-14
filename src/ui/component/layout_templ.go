@@ -119,7 +119,7 @@ func footer() templ.Component {
 			templ_7745c5c3_Var3 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<footer class=\"bg-paper mt-8 px-4 py-8 border-t border-t-gray-200 dark:border-t-gray-800\"><div class=\"flex items-center\"><span class=\"flex-1 text-sm text-gray-500\">Copyright &copy; Austin Lukaschewski, 2025. All Rights Reserved.</span><div class=\"flex flex-col items-center space-y-1\"><i class=\"material-symbols-outlined text-gray-500\">code</i> <span class=\"text-sm text-gray-500\">v0.1.0</span></div></div></footer>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "<footer class=\"bg-paper mt-8 px-4 py-4 border-t border-t-gray-200 dark:border-t-gray-800\"><div class=\"flex flex-col md:flex-row items-center space-y-2 md:space-y-0\"><span class=\"flex-1 text-sm text-gray-500\">Copyright &copy; Austin Lukaschewski, 2025. All Rights Reserved.</span><div class=\"flex items-center space-x-1\"><span class=\"text-sm text-gray-500\">v1.0.0</span></div></div></footer>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

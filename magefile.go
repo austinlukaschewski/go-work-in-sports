@@ -36,13 +36,13 @@ func Tidy() error {
 	return nil
 }
 
-func WatchSCSS() error {
-	return sh.RunV("./sass", "--no-source-map", "--watch", "./static/styles/global.scss:./static/public/css/global.css")
-}
+// func WatchSCSS() error {
+// 	return sh.RunV("./sass", "--no-source-map", "--watch", "./static/styles/global.scss:./static/public/css/global.css")
+// }
 
-func BuildSCSS() error {
-	return sh.RunV("./sass", "--no-source-map", "./static/styles/global.scss:./static/public/css/global.css")
-}
+// func BuildSCSS() error {
+// 	return sh.RunV("./sass", "--no-source-map", "./static/styles/global.scss:./static/public/css/global.css")
+// }
 
 func BuildTempl() error {
 	return sh.RunV("templ", "generate")

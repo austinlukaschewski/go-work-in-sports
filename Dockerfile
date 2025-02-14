@@ -4,6 +4,12 @@ WORKDIR /app
 
 COPY . .
 
+RUN go mod download && go mod verify
+RUN ./sass --no-source-map ./static/styles/global.scss:./static/public/css/global.css
+RUN templ generate
+RUN ./tailwindcss -i ./static/styles/tailwind.css -o ./static/public/css/tailwind.css
+
+
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o main .
 
 FROM alpine:latest

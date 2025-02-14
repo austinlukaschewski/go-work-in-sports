@@ -41,7 +41,7 @@ func WatchSCSS() error {
 }
 
 func BuildSCSS() error {
-	return sh.RunV("./sass", "--no-source-map", "./static/scss:./static/css")
+	return sh.RunV("./sass", "--no-source-map", "./static/styles/global.scss:./static/public/css/global.css")
 }
 
 func BuildTempl() error {
@@ -53,11 +53,11 @@ func WatchTempl() error {
 }
 
 func BuildTailwindCSS() error {
-	return sh.RunV("./tools/tailwindcss", "-i", "./static/styles/tailwind.css", "-o", "./static/public/css/tailwind.css")
+	return sh.RunV("./tailwindcss", "-i", "./static/styles/tailwind.css", "-o", "./static/public/css/tailwind.css")
 }
 
 func WatchTailwindCSS() error {
-	return sh.RunV("./tools/tailwindcss", "-i", "./static/styles/tailwind.css", "-o", "./static/public/css/tailwind.css", "--watch")
+	return sh.RunV("./tailwindcss", "-i", "./static/styles/tailwind.css", "-o", "./static/public/css/tailwind.css", "--watch")
 }
 
 // Install/upgrade tools used for development.

@@ -14,10 +14,10 @@ WORKDIR /app
 
 RUN apk --no-cache add ca-certificates && update-ca-certificates
 
+COPY --from=build /app/main .
 COPY ./src /app/src
 COPY ./internal /app/internal
 COPY ./static /app/static
-COPY --from=build /app/main .
 
 ENV PORT=4000
 EXPOSE 4000

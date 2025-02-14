@@ -65,6 +65,9 @@ func main() {
 	signal.Notify(killSig, os.Interrupt, syscall.SIGTERM)
 
 	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 	go func() {
 		err := http.ListenAndServe(fmt.Sprintf(":%s", port), middlewareLogger(mux))
 

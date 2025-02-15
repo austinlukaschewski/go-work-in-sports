@@ -13,6 +13,10 @@ html {
   color: var(--sys-on-background);
   font-size: 16px;
 
+  transition: background-color 500ms linear;
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+
   &[data-theme="dark"] {
     color-scheme: dark;
     --sys-background: hsl(210, 14%, 7%);
